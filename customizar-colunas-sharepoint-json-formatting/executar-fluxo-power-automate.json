@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/column-formatting.schema.json",
+  "elmType": "span",
+  "style": {
+    "color": "=if([$Status] == 'Choice 2', 'green', '#0078d7')"
+  },
+  "children": [
+    {
+      "elmType": "span",
+      "attributes": {
+        "iconName": "Flow"
+      }
+    },
+    {
+      "elmType": "button",
+      "style": {
+        "border": "none",
+        "background-color": "transparent",
+        "color": "=if([$Status] == 'Choice 2', 'green', '#0078d7')",
+        "cursor": "=if([$Status] == 'Choice 2', 'text', 'pointer')",
+        "display": "=if([$Status] == 'Choice 2', 'none', 'flex')"
+      },
+      "txtContent": "=if([$Status] == 'Choice 2', 'Completo', 'Mover para a próxima etapa')",
+      "customRowAction": {
+        "action": "executeFlow",
+        "actionParams": "{\"id\": \"v1/8a608213-9983-4a44-b225-12f12d221227/4bd191b8-2e44-4804-8e5a-50995f18286f\"}"
+      }
+    },
+    {
+      "elmType": "button",
+      "style": {
+        "border": "none",
+        "background-color": "transparent",
+        "color": "=if([$Status] == 'Choice 2', 'green', '#0078d7')",
+        "cursor": "=if([$Status] == 'Choice 2', 'text', 'pointer')",
+        "display": "=if([$Status] == 'Choice 2', 'flex', 'none')"
+      },
+      "txtContent": "=if([$Status] == 'Choice 2', 'Completo', 'Mover para a próxima etapa')",
+      "customRowAction": {
+        "action": "defaultClick",
+        "actionParams": "{\"id\": \"v1/8a608213-9983-4a44-b225-12f12d221227/4bd191b8-2e44-4804-8e5a-50995f18286f\"}"
+      }
+    }
+  ]
+}
